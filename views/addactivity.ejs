@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <% include partials/head %>
+</head>
+<body>
+    <h4>Add activity</h4>
+    <form method="POST" action="/addactivity" id="activityForm">
+        <p class="label">Select type:</p>
+        <ul class="sports">
+            <% sports.forEach(function(sport) { %>
+            <li class="sports">
+                <input type="radio" name="sportname" value="<%= sport.name %>" id="<%= sport.name %>">
+                <label for="<%= sport.name %>" class="btn">
+                    <i class="fas fa-<%= sport.icon %> fa-2x"></i>
+                    <%= sport.name %>
+                </label>
+            </li>
+            <% }); %>
+        </ul>
+        <p class="warnings" id="warning"><%= warning %></p>
+        <p class="label">Date:</p> <input type="date" id="date" name="date" value="<%= date %>">
+            (month / day / year)
+        <p class="label">Time:</p>
+            <input type="text" name="hours"> h,
+            <input type="text" name="minutes"> min
+        <div id="distance">
+        <p class="label">Distance:</p>
+            <input type="text" name="kilometers"> km,
+            <input type="text" name="meters"> m
+        </div>
+        <p class="label">Notes: </p>
+        <input type="textbox" name="notes"><br /><br />
+        <p class="warnings" id="warning2"><%= warning2 %></p>
+        <input type="submit" value="Add">
+        <span class="link-btn"><a href="/home">Cancel</a></span>
+    </form>
+
+    <script>
+            const activityForm = document.getElementById("activityForm");
+            const warning = document.getElementById("warning");
+            const warning2 = document.getElementById("warning2");      
+
+            activityForm.onclick = () => {
+                warning.style.display = "none";
+                warning2.style.display = "none";
+            }
+            // TODO: distance field should be hidden if a sport has a 
+            // hasDinstance:false value. There is no point asking distance
+            // if user has picked Gym, for example.
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <% include partials/head %>
+</head>
+<body>
+    <h4>Edit activity</h4>
+    <form method="POST" action="editactivity/edited">
+        <div class="btn-e">
+            <i class="fas fa-<%= icon %> fa-2x"></i>
+            <%= sportname %>
+        </div>
+        <input type="hidden" name="sportname" value="<%= sportname %>">
+        <p class="label">Date: </p>
+            <input type="date" id="date" name="date" value="<%= date %>">
+            (month / day / year)
+        <p class="label">Time:</p>
+            <input type="text" name="hours" value="<%= hours %>"> h,
+            <input type="text" name="minutes" value="<%= minutes %>"> min
+        
+        <p class="label">Distance:</p>
+            <input type="text" name="kilometers" value="<%= kilometers %>"> km,
+            <input type="text" name="meters" value="<%= meters %>"> m
+        
+        <p class="label">Notes:</p>
+            <input type="textbox" name="notes" value="<%= notes %>"> 
+        <input type="hidden" name="activityId" value="<%= id %>" /><br /><br />
+        <input type="submit" value="Save changes"> 
+        <a  class="link-btn" href="/home">Cancel</a>
+    </form>
+    <form method="POST" action="editactivity/deleted">
+        <input type="hidden" name="activityId" value="<%= id %>" />
+        <input type="submit" value="Delete activity">
+    </form>
+</body>
+</html>

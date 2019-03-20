@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <% include partials/head %>
+</head>
+<body>
+    <% include partials/header %>
+    <div class="main" id="main">
+        <div class="left">
+        <h2>Login</h2>
+            <form method="POST" action="/login">
+                <p class="label">Username: </p>
+                <input type="text" name="username" class="loginform">
+                <p class="label">Password: </p>
+                <input type="password" name="password" class="loginform">
+                <br />
+                <input type="submit" value="Login">
+            </form>
+            <p class="warnings" id="warning1"><%= warning1 %></p>
+        </div>
+        <div class="right">
+                <h2>Register</h2>
+                <form method="POST" action="/register">
+                    <p class="label">Username: </p>
+                    <input type="text" name="username" class="loginform">
+                    <p class="label">Password: </p>
+                    <input type="password" name="password" class="loginform">
+                    <p class="label">Email: </p>
+                    <input type="email" name="email" class="loginform">
+                    <br />
+                    <input type="submit" value="Register">
+                </form>
+                <p class="warnings" id="warning2"><%= warning2 %></p>
+                <p class="successmessage" id="successMsg"><%= successMsg %></p>
+        </div>
+    </div>
+
+    <script>
+    const main = document.getElementById("main");
+    const warning1 = document.getElementById("warning1");
+    const warning2 = document.getElementById("warning2");
+    const successMsg = document.getElementById("successMsg");
+
+    main.onclick = () => {
+        warning1.style.display = "none";
+        warning2.style.display = "none";
+        successMsg.style.display = "none";
+    }
+
+    </script>
+
+</body>
+
+</html>

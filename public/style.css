@@ -1,0 +1,225 @@
+body {
+    font-family: Helvetica, sans-serif;
+    margin: auto;
+    max-width: 700px;
+    background-color: #EEE2DC;
+}
+
+/* Header */ 
+.header {
+    display: flex;
+    justify-content: center;
+}
+
+.brown {
+    color: rgb(165, 130, 77);
+}
+
+/* Main container */
+
+.left, .right {
+    min-width: 300px;
+}
+
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* Font styles */
+
+h1, h3, h4 {
+    font-family: 'Margarine', cursive;
+    margin-bottom: 0px;
+    color: #123C69;
+}
+
+h1 {
+    font-size: 50px;
+    margin-left: 10px;
+    line-height: 70%;
+}
+
+h2 {
+    font-family: 'Bad Script', cursive;
+    margin-top: 0px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+h4 {
+    font-size: 40px;
+}
+
+.warnings {
+    color: red;
+    max-width: 300px;
+}
+
+.successmessage {
+    color: green;
+    max-width: 300px;
+}
+
+.label {
+    margin-bottom: 0;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+
+/* Home page */
+.chartbox {
+    background-color: white;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    padding-top: 10px;
+}
+
+.profilebox {
+    margin-top: 10px;
+    background-color: white;
+    padding: 60px;
+    padding-top: 10px;
+    padding-bottom: 25px;
+}
+
+#delete2 {
+    display: none;
+}
+
+/* Bar chart bar style */
+.ct-series-a .ct-bar {
+    stroke: #AC3B61;
+    stroke-width: 12px;
+  }
+
+/* Home page activity info boxes */
+
+li.activitylist {
+    list-style: none;
+    border: 1px solid #123C69;
+    max-width: 300px;
+    padding: 10px;
+    margin-bottom: 8px;
+    background-color: rgb(216, 208, 211);
+}
+
+button {
+    background-color: #AC3B61;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 25px;
+}
+
+.activitybox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.activitydetails {
+    width: 70%;
+    padding: 5px;
+    padding-left: 8px;
+}
+
+.notes {
+    margin-top: 10px;
+    font-size: 90%;
+}
+
+
+/* Input fields and buttons */
+
+input[type=text] {
+    width: 70px;
+}
+
+input[type=submit], .link-btn {
+    background-color: #AC3B61;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.link-btn {
+    display: inline-block;
+}
+
+input[type=submit]:hover, .link-btn:hover, button:hover {
+    background-color: rgb(109, 39, 62);
+}
+
+input[type=textbox], {
+    width: 290px;
+}
+
+input.loginform {
+    width: 190px;
+}
+
+
+/* Sport type icons in Add activity page */
+
+input[type=radio] {
+    visibility:hidden;
+}
+
+input:checked + label {
+    background:rgb(64, 136, 214);
+    border: 1px solid black;
+}
+
+li.sports {
+    list-style: none;
+    display: inline-block;
+    vertical-align: top;
+    padding-left: 0;
+    margin: 5px;
+    width: 80px;
+    height: 100px;
+}
+
+ul.sports {
+    text-align: left;
+    padding: 0; 
+    margin-bottom: 30px;
+    max-width: 700px;
+}
+
+.fas {
+    padding: 10px;
+}
+
+.btn, .btn-e {
+    background-color: #123C69;
+    border: none; 
+    color: white; 
+    width: 80px;
+    height: 100px;
+    text-align: center;
+}
+
+.btn-e {
+    cursor: default;
+}
+
+.btn:hover {
+    background-color: rgb(64, 136, 214);
+} 
+
+label {
+    font-family: Arial, Helvetica, sans-serif;
+    display: inline-block;
+}

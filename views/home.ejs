@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <% include partials/head %>
+</head>
+
+<body>
+    <% include partials/header %>
+    <div class="main">
+        <div class="left">
+            <h3>Your activity, the last
+                <%= amountOfColumns %> days:</h3>
+            <div class="chartbox">
+                <%- chartHtml %>
+            </div>
+            <a href="/addactivity" class="link-btn">Add activity</a>
+            <div class="profilebox">
+                <h3>Your profile</h3>
+                <form method="GET" action="/home/logout">
+                    <input type="submit" value="Logout">
+                </form>
+                <span class="link-btn" id="delete1">Delete account</span>
+                <form method="GET" action="/home/deleteAccount" id="delete2">
+                    <p class="label">Are you sure you want <br />to delete your account?</p>
+                    <input type="submit" value="Yes">
+                    <span class="link-btn" id="dontDelete">No</span>
+                </form>
+            </div>
+        </div>
+        <div class="right">
+            <h3>Your latest activities:</h3>
+            <ul class="sports">
+                <% activities.forEach(function(activity) { %>
+                <li class="activitylist">
+                    <div class="activitybox">
+                        <div class="btn-e">
+                            <i class="fas fa-<%= activity.icon %> fa-2x"></i>
+                            <%= activity.name %>
+                        </div>
+                        <div class="activitydetails">
+                            <%= activity.date %><br />
+                            <%= activity.hoursMinutes %><br />
+                            <%= activity.kilometersMeters %><br />
+                            <p class="notes">
+                                <%= activity.notes %>
+                            </p>
+                        </div>
+                        <form method="POST" action="/editactivity">
+
+                            <input type="hidden" name="activityId" value="<%= activity._id %>" />
+                            <button type="submit"><i class="fas fa-edit"></i></button>
+
+                        </form>
+                    </div>
+                </li>
+                <% }); %>
+            </ul>
+        </div>
+    </div>
+    <script>
+        const delete1 = document.getElementById("delete1");
+        const delete2 = document.getElementById("delete2");
+        const dontDelete = document.getElementById("dontDelete");
+        delete1.onclick = () => {
+            delete2.style.display = "block";
+        }
+        dontDelete.onclick = () => {
+            delete2.style.display = "none";
+        }
+    </script>
+</body>
+
+</html>
